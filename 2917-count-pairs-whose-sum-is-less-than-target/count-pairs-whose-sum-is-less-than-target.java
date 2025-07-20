@@ -4,7 +4,7 @@ class Solution {
     nums.sort((a,b)->(a-b));
     int s=0;
     int e=nums.size()-1;
-    while(s!=e){
+    while(s<=e){
         if(nums.get(s) + nums.get(e) < target){
             res += e-s;
             s++;
