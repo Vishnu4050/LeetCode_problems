@@ -9,14 +9,26 @@ class Solution {
                 map.put(ch,map.get(ch)+1);
             }
        }
-       for(char ch : t.toCharArray()){
-        if(map.containsKey(ch)&&map.get(ch)>1){
-            map.put(ch,map.get(ch)-1);
-        }else if(map.containsKey(ch)&&map.get(ch)<=1){
-            map.remove(ch);
+    //    for(char ch : t.toCharArray()){
+    //     if(map.containsKey(ch)&&map.get(ch)>1){
+    //         map.put(ch,map.get(ch)-1);
+    //     }else if(map.containsKey(ch)&&map.get(ch)<=1){
+    //         map.remove(ch);
+    //     }
+    //    }
+    //   return map.isEmpty();
+      for(char ch : t.toCharArray()) {
+
+            if(!map.containsKey(ch))
+                return false;
+
+            map.put(ch, map.get(ch)-1);
+
+            if(map.get(ch) < 0)
+                return false;
         }
-       }
-      return map.isEmpty();
+
+        return true;
         
     }
 }
